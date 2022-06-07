@@ -1,25 +1,25 @@
 package com.pepcus.employee.service;
 
 import java.util.List;
-import com.pepcus.employee.modal.Employee;
+
+import org.springframework.data.domain.Page;
+
+import com.pepcus.employee.model.Employee;
+
 public interface EmployeeService {
 
-	Employee insertEmployee(Employee employee);
+  Employee saveEmployee(Employee employee);
 
-	List<Employee> getAllEmployee();
+  List<Employee> getAllEmployee();
 
-	String getDeleteEmployeeById(int id);
+  void deleteEmployeeById(int id);
 
-	Employee updateEmployee(Employee employee);
+  Employee updateEmployee(Employee employee);
 
-	List<Employee> findAllOrderByNameAsc();
+  List<Employee> findAllSortedByName();
 
-	List<Employee> filterByName(String name);
+  List<Employee> filterByName(String name);
 
+  Page<Employee> findEmployeeWithPagination(int offset, int pageSize);
 
-    
 }
-
-
-
-
